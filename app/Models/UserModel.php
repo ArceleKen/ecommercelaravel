@@ -33,7 +33,7 @@ class UserModel extends Model
     const UPDATED_AT = 'updated_at';
 
 
-    protected $dates = ['deleted_at'];
+    //protected $dates = ['deleted_at'];
     protected $guard_name = 'web';
 
 
@@ -41,33 +41,23 @@ class UserModel extends Model
         'name',
         'email',
         'password',
-        'remember_token',
+        'number',
         'login',
-        'debut',
-        'fin',
-        'apikey',
-        'apitoken',
+        'type',
         'debut',
         'fin'
-
     ];
 
-    /**
-     * The attributes that should be casted to native types.
-     *
-     * @var array
-     */
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
         'email' => 'string',
         'password' => 'string',
-        'remember_token' => 'string',
+        'number' => 'string',
         'login' => 'string',
-        'apikey' => 'string',
+        'type' => 'string',
         'debut' => 'string',
         'fin' => 'string',
-        'apitoken' => 'string'
     ];
 
     /**

@@ -41,7 +41,7 @@
 
             <div class="box-body">
                 <div class="row">
-                  <h3 style="text-align: center">Bienvenue sur <b>MyProject.</b></h3>
+                  <h3 style="text-align: center">Bienvenue sur <b>E-Commerce.</b></h3>
                 </div>
             </div>
         </div>

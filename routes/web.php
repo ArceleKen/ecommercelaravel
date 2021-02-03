@@ -36,15 +36,12 @@ Route::post('/login', "LoginController@requestPwd");
 Route::post('/logout', "LoginController@logout");
 
 Route::get
-('/', "LoginController@getLogin");
-
-Route::get
 ('/login', "LoginController@getLogin")->name('login');
 
 
 Route::group(['middleware' => ['auth', 'checkcreneau']], function () {
 
-    Route::get('/home', 'HomeController@index');
+    Route::get('/connect', 'HomeController@index');
     Route::resource('users', 'UserController');
 
     Route::resource('roles', 'RoleController');
@@ -57,37 +54,8 @@ Route::group(['middleware' => ['auth', 'checkcreneau']], function () {
 
     Route::any('logs', 'LogController@index');
 
-    Route::any('checkcompte', "DigiCareController@checkcompte");
-    Route::any('checkrequette', "DigiCareController@checkrequette");
-    Route::any('checktransaction', "DigiCareController@checktransaction");
-    Route::any('checkticket', "DigiCareController@checkticket");
-    Route::any('checkcallingcard', "DigiCareController@checkcallingcard");
-    Route::any('checkopentickets', "DigiCareController@checkopentickets");
-
-    Route::post('initcompte', "DigiCareController@initcompte");
-
-    Route::get('initcompte', "DigiCareController@initcompteform");
-
-    Route::post('newticket', "DigiCareController@newticket");
-
-    Route::get('newticket', "DigiCareController@newticketForm");
-
-    Route::get('checkmomolocalization', "LocalizationController@getmomolocalization");
-    Route::get('checkomlocalization', "LocalizationController@getomlocalization");
-    Route::get('checkeulocalization', "LocalizationController@geteulocalization");
-    Route::get('checkmtntopuplocalization', "LocalizationController@getmtntopuplocalization");
-    Route::get('checkorangetopuplocalization', "LocalizationController@getorangetopuplocalization");
-    Route::get('checknextteltopuplocalization', "LocalizationController@getnextteltopuplocalization");
-    Route::get('checkyoomeelocalization', "LocalizationController@getyoomeelocalization");
-    Route::get('checkcamtellocalization', "LocalizationController@getcamtellocalization");
-    Route::get('checkinvoiceslocalization', "LocalizationController@getinvoiceslocalization");
-
-    Route::post('transactionlocalization', "LocalizationController@transactionlocalization");
-    //Route::post('checkmtntopuplocalization', "LocalizationController@checkmtntopuplocalization");    
-    //Route::post('checkyoomeelocalization', "LocalizationController@checkyoomeelocalization");
-
 });
 
-//Route::get('test', "LocalizationController@test");
-//Route::post('checkmomolocalization', "LocalizationController@checkmomolocalization");
-
+Route::get
+('/', "HomeController@home");
+Route::get('/home', 'HomeController@home');

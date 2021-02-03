@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>My project</title>
+    <title>ecommerce</title>
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -35,17 +35,12 @@
 </head>
 <body class="hold-transition login-page">
 <div class="login-box" style="margin-top: 10%">
-    <!--div class="login-logo">
-        <a href="{{ url('/home') }}">{{Html::image('images/login/logo_digiPOS.png', 'Logo digiPOS', ['style'=> 'width:100px; height:100px'])}}</a>
-    </div-->
-
+    
     <!-- /.login-logo -->
     <div class="" style="margin-top: 10%"></div>
     <div class="login-box-body" style="min-height: 300px; padding-top: 15%">
         <h3 class="login-box-msg" style="color: #2d2d72;"> {!! Lang::get('messages.titrelogin') !!}!</h3>
         @include('adminlte-templates::common.errors')
-
-        {{--@include('flash::errors')--}}
 
         <form method="post" action="{{ url('/requestpwd') }}">
             {!! csrf_field() !!}
@@ -60,38 +55,13 @@
                 @endif
             </div>
 
-           {{-- <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
-                <input type="password" class="form-control" placeholder="Password" name="password" id="password" required>
-                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                @if ($errors->has('password'))
-                    <span class="help-block">
-                    <strong>{{ $errors->first('password') }}</strong>
-                </span>
-                @endif
-
-            </div>
---}}
+           
             <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
                 <button type="submit" class="btn btn-primary btn-block btn-flat">{!! Lang::get('messages.login') !!}</button>
 
             </div>
-            <!--div class="row">
-                <div class="col-xs-8">
-                    <div class="checkbox icheck">
-                        <label>
-                            <input type="checkbox" name="remember"> Remember Me
-                        </label >
-                    </div>
-                </div>
-
-                <div class="form-group ">
-                </div>
-
-            </div-->
+            
         </form>
-
-        <!-- a href="{{ url('/password/reset') }}">I forgot my password</a><br>
-        <a href="{{ url('/register') }}" class="text-center">Register a new membership</a -->
 
     </div>
     <!-- /.login-box-body -->

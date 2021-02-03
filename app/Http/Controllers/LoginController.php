@@ -30,7 +30,7 @@ class LoginController
             if (Auth::attempt(["login" => $request->login, "password" => $request->password])) {
                 Session::put('username', $request->login);
                 Session::put('log', true);
-                return Redirect::to('/home');
+                return Redirect::to('/connect');
             } else {
                 Session::flash("error", "Mot de passe incorrect");
                 $errors = ['password' => "Mot de passe incorrect"];

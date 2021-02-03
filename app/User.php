@@ -25,16 +25,15 @@ class User extends Authenticatable
     const UPDATED_AT = 'updated_at';
 
 
-    protected $dates = ['deleted_at'];
-
+    //protected $dates = ['deleted_at'];
+    
     public $fillable = [
         'name',
         'email',
         'password',
-        'remember_token',
+        'number',
         'login',
-        'apikey',
-        'apitoken',
+        'type',
         'debut',
         'fin'
     ];
@@ -44,10 +43,9 @@ class User extends Authenticatable
         'name' => 'string',
         'email' => 'string',
         'password' => 'string',
-        'remember_token' => 'string',
+        'number' => 'string',
         'login' => 'string',
-        'apikey' => 'string',
-        'apitoken' => 'string',
+        'type' => 'string',
         'debut' => 'string',
         'fin' => 'string',
     ];
