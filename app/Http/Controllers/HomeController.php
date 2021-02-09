@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Categorie;
 
 class HomeController extends Controller
 {
@@ -19,7 +20,16 @@ class HomeController extends Controller
      */
     public function home()
     {
-        return view('customer.home');
+        $categorie = Categorie::all();
+
+        // foreach (Categorie::all() as $elt) {
+        //     echo $elt->name;
+        // }
+
+        //var_dump(json_encode($categorie));
+
+        return view('customer.home')->with('home', 'home')
+                ->with('categorie', $categorie);
     }
 
     public function index()

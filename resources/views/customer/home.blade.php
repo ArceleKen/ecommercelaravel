@@ -7,90 +7,256 @@
 @stop
 
 @section('content')
-<!-- Slider -->
-    <section class="section-slide">
-        <div class="wrap-slick1">
-            <div class="slick1">
-                <div class="item-slick1" style="background-image: url(customer/images/slide-01.jpg);">
-                    <div class="container h-full">
-                        <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
-                            <div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
-                                <span class="ltext-101 cl2 respon2">
-                                    Collection 2021
-                                </span>
-                            </div>
-                                
-                            <div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
-                                <h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-                                    Nouvelle saison
-                                </h2>
-                            </div>
-                                
-                            <div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
-                                <a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-                                    Commander maintenant
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="item-slick1" style="background-image: url(customer/images/slide-02.jpg);">
-                    <div class="container h-full">
-                        <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
-                            <div class="layer-slick1 animated visible-false" data-appear="rollIn" data-delay="0">
-                                <span class="ltext-101 cl2 respon2">
-                                    Men New-Season
-                                </span>
-                            </div>
-                                
-                            <div class="layer-slick1 animated visible-false" data-appear="lightSpeedIn" data-delay="800">
-                                <h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-                                    Jackets & Coats
-                                </h2>
-                            </div>
-                                
-                            <div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
-                                <a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-                                    Commander maintenant
-                                </a>
-                            </div>
+<!-- HOME -->
+    <div id="home">
+        <!-- container -->
+        <div class="container">
+            <!-- home wrap -->
+            <div class="home-wrap">
+                <!-- home slick -->
+                <div id="home-slick">
+                    <!-- banner -->
+                    <div class="banner banner-1">
+                        <img src="{!! asset('customer/img/banner01.jpg') !!}" alt="">
+                        <div class="banner-caption text-center">
+                            <h1>Plusieurs produits</h1>
+                            <button class="primary-btn">Commander</button>
                         </div>
                     </div>
-                </div>
+                    <!-- /banner -->
 
-                <div class="item-slick1" style="background-image: url(customer/images/slide-03.jpg);">
-                    <div class="container h-full">
-                        <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
-                            <div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
-                                <span class="ltext-101 cl2 respon2">
-                                    Collection 2021
-                                </span>
-                            </div>
-                                
-                            <div class="layer-slick1 animated visible-false" data-appear="rotateInUpRight" data-delay="800">
-                                <h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-                                    Nouveau arrivage
-                                </h2>
-                            </div>
-                                
-                            <div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
-                                <a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-                                    Commander maintenant
-                                </a>
-                            </div>
+                    <!-- banner -->
+                    <div class="banner banner-1">
+                        <img src="{!! asset('customer/img/banner02.jpg') !!}" alt="">
+                        <div class="banner-caption">
+                            <h1 class="primary-color">Très intéressant<br></h1>
+                            <button class="primary-btn">Commander</button>
                         </div>
                     </div>
+                    <!-- /banner -->
+
+                    <!-- banner -->
+                    <div class="banner banner-1">
+                        <img src="{!! asset('customer/img/banner03.jpg') !!}" alt="">
+                        <div class="banner-caption">
+                            <h1 class="white-color">Nouvelle <span>Collection</span> Produits </h1>
+                            <button class="primary-btn">Commander</button>
+                        </div>
+                    </div>
+                    <!-- /banner -->
                 </div>
+                <!-- /home slick -->
             </div>
+            <!-- /home wrap -->
         </div>
-    </section>
+        <!-- /container -->
+    </div>
+    <!-- /HOME -->
+
+<!-- section -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <!-- banner -->
+                <div class="col-md-4 col-sm-6">
+                    <a class="banner banner-1" href="{!! url('/products') !!}">
+                        <img src="{!! asset('customer/img/banner10.jpg') !!}" alt="">
+                        <div class="banner-caption text-center">
+                            <h2 class="white-color">NOUVELLE COLLECTION</h2>
+                        </div>
+                    </a>
+                </div>
+                <!-- /banner -->
+
+                <!-- banner -->
+                <div class="col-md-4 col-sm-6">
+                    <a class="banner banner-1" href="{!! url('/products') !!}">
+                        <img src="{!! asset('customer/img/banner11.jpg') !!}" alt="">
+                        <div class="banner-caption text-center">
+                            <h2 class="white-color">NOUVELLE COLLECTION</h2>
+                        </div>
+                    </a>
+                </div>
+                <!-- /banner -->
+
+                <!-- banner -->
+                <div class="col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-3">
+                    <a class="banner banner-1" href="{!! url('/products') !!}">
+                        <img src="{!! asset('customer/img/banner12.jpg') !!}" alt="">
+                        <div class="banner-caption text-center">
+                            <h2 class="white-color">NOUVELLE COLLECTION</h2>
+                        </div>
+                    </a>
+                </div>
+                <!-- /banner -->
+
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /section -->
+
+    <!-- section -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <!-- section-title -->
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h2 class="title">Offres du jour</h2>
+                        <div class="pull-right">
+                            <div class="product-slick-dots-1 custom-dots"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /section-title -->
+
+                <!-- banner -->
+                <div class="col-md-3 col-sm-6 col-xs-6">
+                    <div class="banner banner-2">
+                        <img src="{!! asset('customer/img/banner14.jpg') !!}" alt="">
+                        <div class="banner-caption">
+                            <h2 class="white-color">NOUVELLE<br>COLLECTION</h2>
+                            <button class="primary-btn">Commander</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /banner -->
+
+                <!-- Product Slick -->
+                <div class="col-md-9 col-sm-6 col-xs-6">
+                    <div class="row">
+                        <div id="product-slick-1" class="product-slick">
+                            <!-- Product Single -->
+                            <div class="product product-single">
+                                <div class="product-thumb">
+                                    <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Voir rapidement</button>
+                                    <img src="{!! asset('customer/img/product01.jpg') !!}" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <h3 class="product-price">$32.50 </h3>
+                                    <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+                                    <div class="product-btns">
+                                        <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Product Single -->
+
+                            <!-- Product Single -->
+                            <div class="product product-single">
+                                <div class="product-thumb">
+                                    <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Voir rapidement</button>
+                                    <img src="{!! asset('customer/img/product07.jpg') !!}" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <h3 class="product-price">$32.50 </h3>
+                                    <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+                                    <div class="product-btns">
+                                        <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Product Single -->
+
+                            <!-- Product Single -->
+                            <div class="product product-single">
+                                <div class="product-thumb">
+                                    <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Voir rapidement</button>
+                                    <img src="{!! asset('customer/img/product06.jpg') !!}" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <h3 class="product-price">$32.50</h3>
+                                    <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+                                    <div class="product-btns">
+                                        <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Product Single -->
+
+                            <!-- Product Single -->
+                            <div class="product product-single">
+                                <div class="product-thumb">
+                                    <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Voir rapidement</button>
+                                    <img src="{!! asset('customer/img/product08.jpg') !!}" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <h3 class="product-price">$32.50</h3>
+                                    <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+                                    <div class="product-btns">
+                                        <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Product Single -->
+                        </div>
+                    </div>
+                </div>
+                <!-- /Product Slick -->
+            </div>
+            <!-- /row -->
+
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /section -->
     
-    @include('customer.layouts.products')
+    <!-- section -->
+    <div class="section section-grey">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <!-- banner -->
+                <div class="col-md-8">
+                    <div class="banner banner-1">
+                        <img src="{!! asset('customer/img/banner13.jpg') !!}" alt="">
+                        <div class="banner-caption text-center">
+                            <h1 class="primary-color">Produits intéressantes<br></h1>
+                            <button class="primary-btn">Commander</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /banner -->
+
+                <!-- banner -->
+                <div class="col-md-4 col-sm-6">
+                    <a class="banner banner-1" href="{!! url('/products') !!}">
+                        <img src="{!! asset('customer/img/banner11.jpg') !!}" alt="">
+                        <div class="banner-caption text-center">
+                            <h2 class="white-color">NOUVELLE COLLECTION</h2>
+                        </div>
+                    </a>
+                </div>
+                <!-- /banner -->
+
+                <!-- banner -->
+                <div class="col-md-4 col-sm-6">
+                    <a class="banner banner-1" href="{!! url('/products') !!}">
+                        <img src="{!! asset('customer/img/banner12.jpg') !!}" alt="">
+                        <div class="banner-caption text-center">
+                            <h2 class="white-color">NOUVELLE COLLECTION</h2>
+                        </div>
+                    </a>
+                </div>
+                <!-- /banner -->
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /section -->
+
 
 @endsection
 
-    <!--  -->
 
 
 @section("scripts")

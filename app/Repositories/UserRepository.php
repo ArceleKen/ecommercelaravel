@@ -24,10 +24,9 @@ class UserRepository extends BaseRepository
         'name',
         'email',
         'password',
-        'remember_token',
+        'number',
         'login',
-        'apikey',
-        'apitoken',
+        'type',
         'debut',
         'fin'
     ];

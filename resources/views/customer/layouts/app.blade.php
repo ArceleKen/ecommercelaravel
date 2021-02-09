@@ -4,39 +4,32 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>
-        @yield('title', 'E-Commerce') 
+        @yield('title', 'E-Commerce')  
     </title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->  
     <!-- <link rel="icon" type="image/png" href="images/icons/favicon.png"/> -->
 <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{!! asset('customer/vendor/bootstrap/css/bootstrap.min.css') !!}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{!! asset('customer/fonts/font-awesome-4.7.0/css/font-awesome.min.css') !!}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{!! asset('customer/fonts/iconic/css/material-design-iconic-font.min.css') !!}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{!! asset('customer/fonts/linearicons-v1.0.0/icon-font.min.css') !!}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{!! asset('customer/vendor/animate/animate.css') !!}">
-<!--===============================================================================================-->  
-    <link rel="stylesheet" type="text/css" href="{!! asset('customer/vendor/css-hamburgers/hamburgers.min.css') !!}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{!! asset('customer/vendor/animsition/css/animsition.min.css') !!}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{!! asset('customer/vendor/select2/select2.min.css') !!}">
-<!--===============================================================================================-->  
-    <link rel="stylesheet" type="text/css" href="{!! asset('customer/vendor/daterangepicker/daterangepicker.css') !!}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{!! asset('customer/vendor/slick/slick.css') !!}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{!! asset('customer/vendor/MagnificPopup/magnific-popup.css') !!}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{!! asset('customer/vendor/perfect-scrollbar/perfect-scrollbar.css') !!}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{!! asset('customer/css/util.css') !!}">
-    <link rel="stylesheet" type="text/css" href="{!! asset('customer/css/main.css') !!}">
+
+<!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="{!! asset('customer/css/bootstrap.min.css') !!}" />
+
+    <!-- Slick -->
+    <link type="text/css" rel="stylesheet" href="{!! asset('customer/css/slick.css') !!}" />
+    <link type="text/css" rel="stylesheet" href="{!! asset('customer/css/slick-theme.css') !!}" />
+
+    <!-- nouislider -->
+    <link type="text/css" rel="stylesheet" href="{!! asset('customer/css/nouislider.min.css') !!}" />
+
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="{!! asset('customer/css/font-awesome.min.css') !!}">
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="{!! asset('customer/css/style.css') !!}" />
 <!--===============================================================================================-->
 
 </head>
@@ -44,266 +37,111 @@
 <body class="animsition">
     @include('customer.layouts.navbar')
 
-    @include('customer.layouts.cart')
-
     @yield('content')
 
 
-    <!-- Footer -->
-    <footer class="bg3 p-t-75 p-b-32">
+    <!-- FOOTER -->
+    <footer id="footer" class="section section-grey">
+        <!-- container -->
         <div class="container">
+            <!-- row -->
             <div class="row">
-                <div class="col-sm-6 col-lg-3 p-b-50">
-                    <h4 class="stext-301 cl0 p-b-30">
-                        Categories
-                    </h4>
+                <!-- footer widget -->
+                <div class="col-md-3 col-sm-6 col-xs-6">
+                    <div class="footer">
+                        <!-- footer logo -->
+                        <div class="footer-logo">
+                  <a class="logo" href="#">
+                    <img src="{!! asset('customer/img/logo.png') !!}" alt="">
+                  </a>
+                        </div>
+                        <!-- /footer logo -->
 
-                    <ul>
-                        <li class="p-b-10">
-                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                Women
-                            </a>
-                        </li>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
 
-                        <li class="p-b-10">
-                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                Men
-                            </a>
-                        </li>
-
-                        <li class="p-b-10">
-                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                Shoes
-                            </a>
-                        </li>
-
-                        <li class="p-b-10">
-                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                Watches
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-sm-6 col-lg-3 p-b-50">
-                    <h4 class="stext-301 cl0 p-b-30">
-                        Help
-                    </h4>
-
-                    <ul>
-                        <li class="p-b-10">
-                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                Track Order
-                            </a>
-                        </li>
-
-                        <li class="p-b-10">
-                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                Returns 
-                            </a>
-                        </li>
-
-                        <li class="p-b-10">
-                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                Shipping
-                            </a>
-                        </li>
-
-                        <li class="p-b-10">
-                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                FAQs
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-sm-6 col-lg-3 p-b-50">
-                    <h4 class="stext-301 cl0 p-b-30">
-                        GET IN TOUCH
-                    </h4>
-
-                    <p class="stext-107 cl7 size-201">
-                        Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
-                    </p>
-
-                    <div class="p-t-27">
-                        <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-
-                        <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-                            <i class="fa fa-instagram"></i>
-                        </a>
-
-                        <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-                            <i class="fa fa-pinterest-p"></i>
-                        </a>
+                        <!-- footer social -->
+                        <ul class="footer-social">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                        </ul>
+                        <!-- /footer social -->
                     </div>
                 </div>
+                <!-- /footer widget -->
 
-                <div class="col-sm-6 col-lg-3 p-b-50">
-                    <!-- <h4 class="stext-301 cl0 p-b-30">
-                        Newsletter
-                    </h4>
+                <!-- footer widget -->
+                <div class="col-md-3 col-sm-6 col-xs-6">
+                    <div class="footer">
+                        <h3 class="footer-header"> </h3>
+                        <ul class="list-links">
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /footer widget -->
 
-                    <form>
-                        <div class="wrap-input1 w-full p-b-4">
-                            <input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
-                            <div class="focus-input1 trans-04"></div>
-                        </div>
+                <div class="clearfix visible-sm visible-xs"></div>
 
-                        <div class="p-t-18">
-                            <button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
-                                Subscribe
-                            </button>
-                        </div>
-                    </form> -->
+                <!-- footer widget -->
+                <div class="col-md-3 col-sm-6 col-xs-6">
+                    <div class="footer">
+                        <h3 class="footer-header">Customer Service</h3>
+                        <ul class="list-links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Shiping & Return</a></li>
+                            <li><a href="#">Shiping Guide</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /footer widget -->
+
+                <!-- footer subscribe -->
+                <div class="col-md-3 col-sm-6 col-xs-6">
+                    <div class="footer">
+                        <h3 class="footer-header">Stay Connected</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                        <form>
+                            <div class="form-group">
+                                <input class="input" placeholder="Enter Email Address">
+                            </div>
+                            <button class="primary-btn">Join Newslatter</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- /footer subscribe -->
+            </div>
+            <!-- /row -->
+            <hr>
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <!-- footer copyright -->
+                    <div class="footer-copyright">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <!-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                    <!-- /footer copyright -->
                 </div>
             </div>
-
-            <div class="p-t-40">
-                <!-- <div class="flex-c-m flex-w p-b-18">
-                    <a href="#" class="m-all-1">
-                        <img src="customer/images/icons/icon-pay-01.png" alt="ICON-PAY">
-                    </a>
-
-                    <a href="#" class="m-all-1">
-                        <img src="customer/images/icons/icon-pay-02.png" alt="ICON-PAY">
-                    </a>
-
-                    <a href="#" class="m-all-1">
-                        <img src="customer/images/icons/icon-pay-03.png" alt="ICON-PAY">
-                    </a>
-
-                    <a href="#" class="m-all-1">
-                        <img src="customer/images/icons/icon-pay-04.png" alt="ICON-PAY">
-                    </a>
-
-                    <a href="#" class="m-all-1">
-                        <img src="customer/images/icons/icon-pay-05.png" alt="ICON-PAY">
-                    </a>
-                </div> -->
-
-                <p class="stext-107 cl6 txt-center">
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-
-                </p>
-            </div>
+            <!-- /row -->
         </div>
+        <!-- /container -->
     </footer>
+    <!-- /FOOTER -->
 
 
-    <!-- Back to top -->
-    <div class="btn-back-to-top" id="myBtn">
-        <span class="symbol-btn-back-to-top">
-            <i class="zmdi zmdi-chevron-up"></i>
-        </span>
-    </div>
-
-
-
-<!--===============================================================================================-->  
-    <script src="{!! asset('customer/vendor/jquery/jquery-3.2.1.min.js') !!}"></script>
-<!--===============================================================================================-->
-    <script src="{!! asset('customer/vendor/animsition/js/animsition.min.js') !!}"></script>
-<!--===============================================================================================-->
-    <script src="{!! asset('customer/vendor/bootstrap/js/popper.js') !!}"></script>
-    <script src="{!! asset('customer/vendor/bootstrap/js/bootstrap.min.js') !!}"></script>
-<!--===============================================================================================-->
-    <script src="{!! asset('customer/vendor/select2/select2.min.js') !!}"></script>
-    <script>
-        $(".js-select2").each(function(){
-            $(this).select2({
-                minimumResultsForSearch: 20,
-                dropdownParent: $(this).next('.dropDownSelect2')
-            });
-        })
-    </script>
-<!--===============================================================================================-->
-    <script src="{!! asset('customer/vendor/daterangepicker/moment.min.js') !!}"></script>
-    <script src="{!! asset('customer/vendor/daterangepicker/daterangepicker.js') !!}"></script>
-<!--===============================================================================================-->
-    <script src="{!! asset('customer/vendor/slick/slick.min.js') !!}"></script>
-    <script src="{!! asset('customer/js/slick-custom.js') !!}"></script>
-<!--===============================================================================================-->
-    <script src="{!! asset('customer/vendor/parallax100/parallax100.js') !!}"></script>
-    <script>
-        $('.parallax100').parallax100();
-    </script>
-<!--===============================================================================================-->
-    <script src="{!! asset('customer/vendor/MagnificPopup/jquery.magnific-popup.min.js') !!}"></script>
-    <script>
-        $('.gallery-lb').each(function() { // the containers for all your galleries
-            $(this).magnificPopup({
-                delegate: 'a', // the selector for gallery item
-                type: 'image',
-                gallery: {
-                    enabled:true
-                },
-                mainClass: 'mfp-fade'
-            });
-        });
-    </script>
-<!--===============================================================================================-->
-    <script src="{!! asset('customer/vendor/isotope/isotope.pkgd.min.js') !!}"></script>
-<!--===============================================================================================-->
-    <script src="{!! asset('customer/vendor/sweetalert/sweetalert.min.js') !!}"></script>
-    <script>
-        $('.js-addwish-b2').on('click', function(e){
-            e.preventDefault();
-        });
-
-        $('.js-addwish-b2').each(function(){
-            var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
-            $(this).on('click', function(){
-                swal(nameProduct, "is added to wishlist !", "success");
-
-                $(this).addClass('js-addedwish-b2');
-                $(this).off('click');
-            });
-        });
-
-        $('.js-addwish-detail').each(function(){
-            var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
-
-            $(this).on('click', function(){
-                swal(nameProduct, "is added to wishlist !", "success");
-
-                $(this).addClass('js-addedwish-detail');
-                $(this).off('click');
-            });
-        });
-
-        /*---------------------------------------------*/
-
-        $('.js-addcart-detail').each(function(){
-            var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
-            $(this).on('click', function(){
-                swal(nameProduct, "is added to cart !", "success");
-            });
-        });
-    
-    </script>
-<!--===============================================================================================-->
-    <script src="{!! asset('customer/vendor/perfect-scrollbar/perfect-scrollbar.min.js') !!}"></script>
-    <script>
-        $('.js-pscroll').each(function(){
-            $(this).css('position','relative');
-            $(this).css('overflow','hidden');
-            var ps = new PerfectScrollbar(this, {
-                wheelSpeed: 1,
-                scrollingThreshold: 1000,
-                wheelPropagation: false,
-            });
-
-            $(window).on('resize', function(){
-                ps.update();
-            })
-        });
-    </script>
-<!--===============================================================================================-->
+<!-- jQuery Plugins -->
+    <script src="{!! asset('customer/js/jquery.min.js') !!}"></script>
+    <script src="{!! asset('customer/js/bootstrap.min.js') !!}"></script>
+    <script src="{!! asset('customer/js/slick.min.js') !!}"></script>
+    <script src="{!! asset('customer/js/nouislider.min.js') !!}"></script>
+    <script src="{!! asset('customer/js/jquery.zoom.min.js') !!}"></script>
     <script src="{!! asset('customer/js/main.js') !!}"></script>
 
 </body>

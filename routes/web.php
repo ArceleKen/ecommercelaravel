@@ -59,3 +59,8 @@ Route::group(['middleware' => ['auth', 'checkcreneau']], function () {
 Route::get
 ('/', "HomeController@home");
 Route::get('/home', 'HomeController@home');
+
+Route::get
+('/products/', "ProductController@index");
+Route::get
+('/detailsproduct/', "ProductController@detail");
