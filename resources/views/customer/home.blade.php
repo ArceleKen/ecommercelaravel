@@ -133,69 +133,24 @@
                 <div class="col-md-9 col-sm-6 col-xs-6">
                     <div class="row">
                         <div id="product-slick-1" class="product-slick">
+                            @foreach($products as $elt)
                             <!-- Product Single -->
                             <div class="product product-single">
                                 <div class="product-thumb">
-                                    <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Voir rapidement</button>
-                                    <img src="{!! asset('customer/img/product01.jpg') !!}" alt="">
+                                    <a class="main-btn quick-view" href="{!! url('/detailsproduct/'.$elt->id) !!}"><i class="fa fa-search-plus"></i> Voir rapidement</a>
+                                    <img src="{!! asset('customer/img/'.$elt->main_image) !!}" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <h3 class="product-price">$32.50 </h3>
-                                    <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+                                    <h3 class="product-price">{!! $elt->price !!} FCFA</h3>
+                                    <h2 class="product-name"><a href="{!! url('/detailsproduct/'.$elt->id) !!}">{!! $elt->name !!}</a></h2>
                                     <div class="product-btns">
                                         <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
                                     </div>
                                 </div>
                             </div>
                             <!-- /Product Single -->
+                            @endforeach
 
-                            <!-- Product Single -->
-                            <div class="product product-single">
-                                <div class="product-thumb">
-                                    <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Voir rapidement</button>
-                                    <img src="{!! asset('customer/img/product07.jpg') !!}" alt="">
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-price">$32.50 </h3>
-                                    <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-                                    <div class="product-btns">
-                                        <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /Product Single -->
-
-                            <!-- Product Single -->
-                            <div class="product product-single">
-                                <div class="product-thumb">
-                                    <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Voir rapidement</button>
-                                    <img src="{!! asset('customer/img/product06.jpg') !!}" alt="">
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-price">$32.50</h3>
-                                    <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-                                    <div class="product-btns">
-                                        <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /Product Single -->
-
-                            <!-- Product Single -->
-                            <div class="product product-single">
-                                <div class="product-thumb">
-                                    <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Voir rapidement</button>
-                                    <img src="{!! asset('customer/img/product08.jpg') !!}" alt="">
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-price">$32.50</h3>
-                                    <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-                                    <div class="product-btns">
-                                        <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /Product Single -->
                         </div>
                     </div>
                 </div>
@@ -208,6 +163,7 @@
     </div>
     <!-- /section -->
     
+
     <!-- section -->
     <div class="section section-grey">
         <!-- container -->

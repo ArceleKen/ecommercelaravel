@@ -12,14 +12,16 @@
 
                     <!-- Search -->
                     <div class="header-search">
-                        <form>
-                            <input class="input search-input" type="text" placeholder="Entrer mots clés">
-                            <select class="input search-categories">
+                        <form method="POST" action="{!! url('/searchproducts') !!}">
+                            <input class="input search-input" type="text" placeholder="Entrer mots clés" name="keywords">
+                            <select class="input search-categories" name="categorie_id">
                                 <option value="0">tout Categories</option>
-                                <option value="1">Category 01</option>
-                                <option value="1">Category 02</option>
+                                @foreach($categories as $elt)
+                                <option value="{!! $elt->id !!}">{!! $elt->name !!}</option>
+                                @endforeach
                             </select>
-                            <button class="search-btn"><i class="fa fa-search"></i></button>
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                            <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
                         </form>
                     </div>
                     <!-- /Search -->
@@ -134,14 +136,10 @@
                 @endif
                     <span class="category-header">Categories <i class="fa fa-list"></i></span>
                     <ul class="category-list">
-                        <li><a href="{!! url('/products') !!}">Voir tout</a></li>
-                        <li><a href="{!! url('/products') !!}">Men’s Clothing</a></li>
-                        <li><a href="{!! url('/products') !!}">Women’s Clothing</a></li>
-                        <li><a href="{!! url('/products') !!}">Phones & Accessories</a></li>
-                        <li><a href="{!! url('/products') !!}">Jewelry & Watches</a></li>
-                        <li><a href="{!! url('/products') !!}">Bags & Shoes</a></li>
-                        <li><a href="{!! url('/products') !!}">Computer & Office</a></li>
-                        <li><a href="{!! url('/products') !!}">Consumer Electronics</a></li>
+                        <li><a href="{!! url('/products/0') !!}">Voir tout</a></li>
+                        @foreach($categories as $elt)
+                        <li><a href="{!! url('/products/'.$elt->id) !!}">{!! $elt->name !!}</a></li>
+                        @endforeach
                     </ul>
                 </div>
                 <!-- /category nav -->
@@ -151,7 +149,7 @@
                     <span class="menu-header">Menu <i class="fa fa-bars"></i></span>
                     <ul class="menu-list">
                         <li><a href="{!! url('/') !!}">Accueil</a></li>
-                        <li><a href="{!! url('/products') !!}">Ventes</a></li>
+                        <li><a href="{!! url('/products/0') !!}">Ventes</a></li>
                     </ul>
                 </div>
                 <!-- menu nav -->
@@ -160,3 +158,12 @@
         <!-- /container -->
     </div>
     <!-- /NAVIGATION -->
+
+
+    @if(session('error'))
+    <div class="row">
+        <div class="alert alert-danger" role="alert">
+          <b><center>{!! session('error') !!}</center></b>
+        </div>
+    </div>
+    @endif

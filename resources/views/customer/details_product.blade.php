@@ -12,10 +12,10 @@
     <div id="breadcrumb">
         <div class="container">
             <ul class="breadcrumb">
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Produits</a></li>
-                <li><a href="#">Categorie</a></li>
-                <li class="active">Product Name Goes Here</li>
+                <li><a href="{!! url('/') !!}">Accueil</a></li>
+                <li><a href="{!! url('/products/0') !!}">Produits</a></li>
+                <li><a href="{!! url('/products/'.$product->categorie_id) !!}">{!! $product->categorie->name !!}</a></li>
+                <li class="active">{!! $product->name !!}</li>
             </ul>
         </div>
     </div>
@@ -30,42 +30,34 @@
                 <!--  Product Details -->
                 <div class="product product-details clearfix">
                     <div class="col-md-6">
+
                         <div id="product-main-view">
                             <div class="product-view">
-                                <img src="{!! asset('customer/img/main-product01.jpg') !!}" alt="">
+                                <img src="{!! asset('customer/img/'.$product->main_image) !!}" alt="">
                             </div>
+                            <!-- @foreach($product->images as $elt)
                             <div class="product-view">
-                                <img src="{!! asset('customer/img/main-product02.jpg') !!}" alt="">
+                                <img src="{!! asset('customer/img/'.$elt->name) !!}" alt="">
                             </div>
-                            <div class="product-view">
-                                <img src="{!! asset('customer/img/main-product03.jpg') !!}" alt="">
-                            </div>
-                            <div class="product-view">
-                                <img src="{!! asset('customer/img/main-product04.jpg') !!}" alt="">
-                            </div>
+                            @endforeach -->
                         </div>
                         <div id="product-view">
                             <div class="product-view">
-                                <img src="{!! asset('customer/img/thumb-product01.jpg') !!}" alt="">
+                                <img src="{!! asset('customer/img/'.$product->main_image) !!}" alt="">
                             </div>
+                            <!-- @foreach($product->images as $elt)
                             <div class="product-view">
-                                <img src="{!! asset('customer/img/thumb-product02.jpg') !!}" alt="">
+                                <img src="{!! asset('customer/img/'.$elt->name) !!}" alt="">
                             </div>
-                            <div class="product-view">
-                                <img src="{!! asset('customer/img/thumb-product03.jpg') !!}" alt="">
-                            </div>
-                            <div class="product-view">
-                                <img src="{!! asset('customer/img/thumb-product04.jpg') !!}" alt="">
-                            </div>
+                            @endforeach -->
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="product-body">
-                            <h2 class="product-name">Product Name Goes Here</h2>
-                            <h3 class="product-price">$32.50</h3>
+                            <h2 class="product-name">{!! $product->name !!}</h2>
+                            <h3 class="product-price">{!! $product->price !!} FCFA</h3>
                             <p><strong>Description:</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>{!! $product->description !!}</p>
 
                             <div class="product-btns">
                                 <div class="qty-input">
@@ -99,16 +91,17 @@
                 </div>
                 <!-- section title -->
 
+                @foreach($products as $elt)
                 <!-- Product Single -->
                 <div class="col-md-3 col-sm-6 col-xs-6">
                     <div class="product product-single">
                         <div class="product-thumb">
-                            <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Voir rapidement</button>
-                            <img src="{!! asset('customer/img/product04.jpg') !!}" alt="">
+                            <a class="main-btn quick-view" href="{!! url('/detailsproduct/'.$elt->id) !!}"><i class="fa fa-search-plus"></i> Voir rapidement</a>
+                            <img src="{!! asset('customer/img/'.$elt->main_image) !!}" alt="">
                         </div>
                         <div class="product-body">
-                            <h3 class="product-price">$32.50</h3>
-                            <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+                            <h3 class="product-price">{!! $elt->price !!} FCFA</h3>
+                            <h2 class="product-name"><a href="{!! url('/detailsproduct/'.$elt->id) !!}">{!! $elt->name !!}</a></h2>
                             <div class="product-btns">
                                 <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
                             </div>
@@ -116,60 +109,9 @@
                     </div>
                 </div>
                 <!-- /Product Single -->
+                @endforeach
 
-                <!-- Product Single -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="product product-single">
-                        <div class="product-thumb">
-                            <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Voir rapidement</button>
-                            <img src="{!! asset('customer/img/product03.jpg') !!}" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-price">$32.50</h3>
-                            <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-                            <div class="product-btns">
-                                <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Product Single -->
-
-                <!-- Product Single -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="product product-single">
-                        <div class="product-thumb">
-                            <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Voir rapidement</button>
-                            <img src="{!! asset('customer/img/product02.jpg') !!}" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-price">$32.50 </h3>
-                            <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-                            <div class="product-btns">
-                                <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Product Single -->
-
-                <!-- Product Single -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="product product-single">
-                        <div class="product-thumb">
-                            <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Voir rapidement</button>
-                            <img src="{!! asset('customer/img/product01.jpg') !!}" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-price">$32.50 </h3>
-                            <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-                            <div class="product-btns">
-                                <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Product Single -->
+                
             </div>
             <!-- /row -->
         </div>

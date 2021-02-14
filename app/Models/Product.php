@@ -25,6 +25,7 @@ class Product extends Model
         'description',
         'price',
         'status',
+        'main_image'
     ];
 
     /**
@@ -38,7 +39,8 @@ class Product extends Model
         'name' => 'string',
         'description' => 'string',
         'price' => 'float',
-        'status' => 'integer'
+        'status' => 'integer',
+        'main_image' => 'string'
     ];
 
     /**
@@ -57,7 +59,7 @@ class Product extends Model
 
     public function images()
     {
-        return $this->hasMany(App\Models\Image::class);
+        return $this->hasMany('App\Models\Image', 'product_id');
     }
     
 }

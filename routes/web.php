@@ -60,7 +60,9 @@ Route::get
 ('/', "HomeController@home");
 Route::get('/home', 'HomeController@home');
 
+Route::any
+('/products/{categorie_id}', "ProductController@index");
 Route::get
-('/products/', "ProductController@index");
-Route::get
-('/detailsproduct/', "ProductController@detail");
+('/detailsproduct/{product_id}', "ProductController@detail");
+Route::post
+('/searchproducts', "ProductController@searchproducts");
