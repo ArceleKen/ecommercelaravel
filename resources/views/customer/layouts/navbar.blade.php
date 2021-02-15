@@ -39,7 +39,7 @@
                             <a href="#" class="text-uppercase">Connexion</a>
                             <ul class="custom-menu">
                                 <li><a href="#"><i class="fa fa-user-o"></i> Mon compte</a></li>
-                                <li><a href="#"><i class="fa fa-unlock-alt"></i> Connexion</a></li>
+                                <li><a href="#"><i class="fa fa-unlock-alt"></i> Se connecter</a></li>
                                 <li><a href="#"><i class="fa fa-user-plus"></i> Créer un compte</a></li>
                             </ul>
                         </li>
@@ -50,60 +50,43 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                 <div class="header-btns-icon">
                                     <i class="fa fa-shopping-cart"></i>
-                                    <span class="qty">3</span>
+                                    <span class="qty">
+                                        @if (session()->has("totalQuantity")) {{ session('totalQuantity') }} @else 0 @endif
+                                    </span>
                                 </div>
                                 <strong class="text-uppercase">Mon panier:</strong>
                                 <br>
-                                <span>35 000 FCFA</span>
+                                <span>
+                                    @if (session()->has("totalPrice")) {{ session('totalPrice') }} @else 0 @endif FCFA
+                                </span>
                             </a>
                             <div class="custom-menu">
                                 <div id="shopping-cart">
+
+                                    @if (session()->has("cart") && session('totalQuantity')>0)
                                     <div class="shopping-cart-list">
+                                        <!-- On parcourt les produits du panier en session : session('basket') -->
+                                        @foreach (session("cart") as $key => $item)
                                         <div class="product product-widget">
                                             <div class="product-thumb">
-                                                <img src="{!! asset('customer/img/thumb-product01.jpg') !!}" alt="">
+                                                <img src="{!! asset('customer/img/'.$item['main_image']) !!}" alt="">
                                             </div>
                                             <div class="product-body">
-                                                <h3 class="product-price">5000 FCFA<span class="qty">x3</span></h3>
-                                                <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+                                                <h3 class="product-price">{!! $item['price'] !!} FCFA<span class="qty"> x {!! $item['quantity'] !!}</span></h3>
+                                                <h2 class="product-name"><a href="#">{!! $item['name'] !!}</a></h2>
                                             </div>
                                             <button class="cancel-btn"><i class="fa fa-trash"></i></button>
                                         </div>
-                                        <div class="product product-widget">
-                                            <div class="product-thumb">
-                                                <img src="{!! asset('customer/img/thumb-product01.jpg') !!}" alt="">
-                                            </div>
-                                            <div class="product-body">
-                                                <h3 class="product-price">3500 FCFA <span class="qty">x3</span></h3>
-                                                <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-                                            </div>
-                                            <button class="cancel-btn"><i class="fa fa-trash"></i></button>
-                                        </div>
-                                        <div class="product product-widget">
-                                            <div class="product-thumb">
-                                                <img src="{!! asset('customer/img/thumb-product01.jpg') !!}" alt="">
-                                            </div>
-                                            <div class="product-body">
-                                                <h3 class="product-price">3500 FCFA <span class="qty">x3</span></h3>
-                                                <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-                                            </div>
-                                            <button class="cancel-btn"><i class="fa fa-trash"></i></button>
-                                        </div>
-                                        <div class="product product-widget">
-                                            <div class="product-thumb">
-                                                <img src="{!! asset('customer/img/thumb-product01.jpg') !!}" alt="">
-                                            </div>
-                                            <div class="product-body">
-                                                <h3 class="product-price">3500 FCFA <span class="qty">x3</span></h3>
-                                                <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-                                            </div>
-                                            <button class="cancel-btn"><i class="fa fa-trash"></i></button>
-                                        </div>
+                                        @endforeach
                                     </div>
                                     <div class="shopping-cart-btns">
-                                        <button class="main-btn">Voir panier</button>
-                                        <button class="primary-btn">Commander <i class="fa fa-arrow-circle-right"></i></button>
+                                        <a class="main-btn" href="{{ route('cart.show') }}">Voir panier</a>
+                                        <a class="primary-btn" href="">Commander <i class="fa fa-arrow-circle-right"></i></a>
                                     </div>
+                                    @else
+                                    <center><b>le panier est vide</b></center>
+                                    @endif
+
                                 </div>
                             </div>
                         </li>

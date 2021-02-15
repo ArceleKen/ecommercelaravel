@@ -40,6 +40,42 @@
     @yield('content')
 
 
+
+    <div id="myModal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header panel-active">
+                    <h5 class="modal-title">
+                        @if(session('message'))
+                            {!! session('message') !!}
+                        @endif
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body alert alert-success">
+                    <center>
+                    <b>
+                    @if(session('message'))
+                        {!! session('message') !!}
+                    @endif
+                    </b>
+                    </center>
+                </div>
+                <div class="modal-footer">
+                    <a href="{{ url('/products/0') }}" class="btn btn-primary pull-left">Poursuivre les achats</a>
+                    <a href="{{ route('cart.show') }}" class="btn btn-warning pull-right">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="qty">
+                            @if (session()->has("totalQuantity")) {{ session('totalQuantity') }} @else 0 @endif
+                        </span>
+                        Voir le panier
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+
     <!-- FOOTER -->
     <footer id="footer" class="section section-grey">
         <!-- container -->
@@ -143,6 +179,15 @@
     <script src="{!! asset('customer/js/nouislider.min.js') !!}"></script>
     <script src="{!! asset('customer/js/jquery.zoom.min.js') !!}"></script>
     <script src="{!! asset('customer/js/main.js') !!}"></script>
+
+    <script type="text/javascript">
+        
+
+        @if(session()->has('message'))
+            $("#myModal").modal('show');
+        @endif 
+  
+    </script>
 
 </body>
 </html>

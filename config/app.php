@@ -79,9 +79,6 @@ return [
     */
 
     'locale' => 'en',
-    'ip_api_mydigipos' => 'https://esptpa.worldvoice.eu',
-    'secret_key' => 'jwhk_55jutYTtd',
-    'key_locate' => 'LHkjH(578hhggn?gRGbB,khggg6788hk',
 
     /*
     |--------------------------------------------------------------------------
@@ -191,6 +188,7 @@ return [
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
+        App\Providers\CartServiceProvider::class,
 
     ],
 

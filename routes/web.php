@@ -56,6 +56,8 @@ Route::group(['middleware' => ['auth', 'checkcreneau']], function () {
 
 });
 
+
+
 Route::get
 ('/', "HomeController@home");
 Route::get('/home', 'HomeController@home');
@@ -66,3 +68,10 @@ Route::get
 ('/detailsproduct/{product_id}', "ProductController@detail");
 Route::post
 ('/searchproducts', "ProductController@searchproducts");
+
+Route::get('cart', "CartController@show")->name('cart.show');
+Route::post('cart/add/{product}', "CartController@add")->name('cart.add');
+Route::get('cart/remove/{product}', "CartController@remove")->name('cart.remove');
+Route::get('cart/empty', "CartController@empty")->name('cart.empty');
+Route::post
+('/updateqty', "CartController@updateqty");

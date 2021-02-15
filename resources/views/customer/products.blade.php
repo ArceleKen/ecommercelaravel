@@ -104,7 +104,11 @@
                                         <h3 class="product-price">{!! $elt->price !!} FCFA </h3>
                                         <h2 class="product-name"><a href="{!! url('/detailsproduct/'.$elt->id) !!}">{!! $elt->name !!}</a></h2>
                                         <div class="product-btns">
-                                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
+                                            <form method="POST" action="{{ route('cart.add', $elt) }}">
+                                                <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                                                <input type="hidden" name="quantity" value="1">
+                                                <button class="primary-btn add-to-cart" type="submit"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>

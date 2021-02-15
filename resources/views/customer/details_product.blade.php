@@ -59,13 +59,16 @@
                             <p><strong>Description:</p>
                             <p>{!! $product->description !!}</p>
 
-                            <div class="product-btns">
-                                <div class="qty-input">
-                                    <span class="text-uppercase">Quantité: </span>
-                                    <input class="input" type="number" value="1">
+                            <form method="POST" action="{{ route('cart.add', $product) }}">
+                                <div class="product-btns">
+                                    <div class="qty-input">
+                                        <span class="text-uppercase">Quantité: </span>
+                                        <input class="input" type="number" value="1" name="quantity" min="1">
+                                    </div>
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                                    <button class="primary-btn add-to-cart pull-right" type="submit"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
                                 </div>
-                                <button class="primary-btn add-to-cart pull-right"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
