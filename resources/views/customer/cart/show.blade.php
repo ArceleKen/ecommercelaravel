@@ -88,7 +88,7 @@
                             </tfoot>
                         </table>
                         <div class="pull-right">
-                            <a class="primary-btn" href="">Passer la commande</a>
+                            <a class="primary-btn" href="{{ url('/infoscommand') }}">Passer la commande</a>
                         </div>
                     </div>
 

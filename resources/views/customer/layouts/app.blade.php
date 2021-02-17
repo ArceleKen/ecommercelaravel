@@ -75,6 +75,34 @@
         </div>
     </div> 
 
+    <div id="modalSendCommand" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header panel-active">
+                    <h4 class="modal-title">
+                        @if(session('info'))
+                            Vous payerez à la livraison <br>
+                        @endif
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body alert alert-success">
+                    <center>
+                    <b>
+                    @if(session('info'))
+                        {!! session('info') !!}<br>
+                    @endif
+
+                    Nous vous remercions
+                    </b>
+                    </center>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer id="footer" class="section section-grey">
@@ -186,7 +214,10 @@
         @if(session()->has('message'))
             $("#myModal").modal('show');
         @endif 
-  
+    
+        @if(session()->has('info'))
+            $("#modalSendCommand").modal('show');
+        @endif 
     </script>
 
 </body>

@@ -75,3 +75,8 @@ Route::get('cart/remove/{product}', "CartController@remove")->name('cart.remove'
 Route::get('cart/empty', "CartController@empty")->name('cart.empty');
 Route::post
 ('/updateqty', "CartController@updateqty");
+
+Route::get
+('/infoscommand', "CommandController@infoscommand");
+Route::post
+('/sendcommand', "CommandController@sendcommand");

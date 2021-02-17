@@ -31,8 +31,6 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'number',
-        'login',
         'type',
         'debut',
         'fin'
@@ -43,8 +41,6 @@ class User extends Authenticatable
         'name' => 'string',
         'email' => 'string',
         'password' => 'string',
-        'number' => 'string',
-        'login' => 'string',
         'type' => 'string',
         'debut' => 'string',
         'fin' => 'string',

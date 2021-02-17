@@ -81,7 +81,7 @@
                                     </div>
                                     <div class="shopping-cart-btns">
                                         <a class="main-btn" href="{{ route('cart.show') }}">Voir panier</a>
-                                        <a class="primary-btn" href="">Commander <i class="fa fa-arrow-circle-right"></i></a>
+                                        <a class="primary-btn" href="{{ url('/infoscommand') }}">Commander <i class="fa fa-arrow-circle-right"></i></a>
                                     </div>
                                     @else
                                     <center><b>le panier est vide</b></center>
@@ -119,7 +119,7 @@
                 @endif
                     <span class="category-header">Categories <i class="fa fa-list"></i></span>
                     <ul class="category-list">
-                        <li><a href="{!! url('/products/0') !!}">Voir tout</a></li>
+                        <li><a href="{!! url('/products/0') !!}">Voir tout categorie</a></li>
                         @foreach($categories as $elt)
                         <li><a href="{!! url('/products/'.$elt->id) !!}">{!! $elt->name !!}</a></li>
                         @endforeach

@@ -41,8 +41,6 @@ class UserModel extends Model
         'name',
         'email',
         'password',
-        'number',
-        'login',
         'type',
         'debut',
         'fin'
@@ -53,8 +51,6 @@ class UserModel extends Model
         'name' => 'string',
         'email' => 'string',
         'password' => 'string',
-        'number' => 'string',
-        'login' => 'string',
         'type' => 'string',
         'debut' => 'string',
         'fin' => 'string',

@@ -24,8 +24,6 @@ class UserRepository extends BaseRepository
         'name',
         'email',
         'password',
-        'number',
-        'login',
         'type',
         'debut',
         'fin'

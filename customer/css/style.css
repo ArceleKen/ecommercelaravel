@@ -181,6 +181,7 @@ hr {
 
 textarea.input {
   padding: 15px;
+  height: 100px;
 }
 
 .input-checkbox .caption {
