@@ -51,52 +51,6 @@
 
 @section("scripts")
     <script>
-        window.data = [];
-        $(function () {
-            $("#tree").jstree({
-                "checkbox": {
-                    "keep_selected_style": false
-                },
-                "plugins": ["checkbox"]
-            });
-            $("#tree").bind("changed.jstree",
-                function (e, data) {
-                    console.log("Checked: " + data.node.id);
-                    console.log("Parent: " + data.node.parent);
-                    window.data = data;
-                });
-        });
-
-        $("#btnSubmit").click(function (e) {
-            e.preventDefault();
-            let IDS = window.data;
-            var ids_string = "";
-
-            if(IDS.selected==undefined || IDS.selected.length==0){
-                swal({
-                    title: 'ERREUR',
-                    text: 'Selectionnez au moins un compte',
-                    type: 'error',
-                    confirmButtonColor: '#21c256',
-                })
-            }else{
-                for (let i=0;IDS.selected.length>i;i++){
-                    ids_string+=(IDS.selected[i]).toString()+';';
-                }
-                ids_string=ids_string.slice(0,-1);
-
-                localStorage.setItem("comptes", ids_string);
-                swal({
-                    position: 'top-right',
-                    type: 'success',
-                    title: 'Enregistrement effectué',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-
-               // let route = window.baseURL+"/display/comptes?identifiants="+ids_string;
-                //window.location.replace(route);
-            }
-        })
+        
     </script>
 @stop

@@ -29,12 +29,8 @@ Route::group(
 
 
 /** login  */
-
-Route::post('/login1', "LoginController@login");
-Route::post('/requestpwd', "LoginController@requestPwd");
-Route::post('/login', "LoginController@requestPwd");
+Route::post('/login', "LoginController@login");
 Route::post('/logout', "LoginController@logout");
-
 Route::get
 ('/login', "LoginController@getLogin")->name('login');
 
@@ -49,10 +45,12 @@ Route::group(['middleware' => ['auth', 'checkcreneau']], function () {
         ->name("getAssign.permission");
     Route::post('roles/assign_permission', 'RoleController@assignPermission')
         ->name("assign.permission");
-
     Route::resource('permissions', 'PermissionController');
-
     Route::any('logs', 'LogController@index');
+
+
+    Route::any('commandslist', 'CommandController@commandslist');
+    Route::post('changedstatuscommand', 'CommandController@changedstatuscommand');
 
 });
 

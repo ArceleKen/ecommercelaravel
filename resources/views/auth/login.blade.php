@@ -44,53 +44,26 @@
         <h3 class="login-box-msg" style="color: #2d2d72;"> {!! Lang::get('messages.titremdp') !!}!</h3>
 
         @include('adminlte-templates::common.errors')
-        {{--@include('flash::errors')--}}
-        <form method="post" action="{{ url('/login1') }}">
+        <form method="post" action="{{ url('/login') }}">
             {!! csrf_field() !!}
 
-            <div class="form-group has-feedback {{ $errors->has('login') ? ' has-error' : '' }}">
-                {!! Form::text('login', $login, ['class' => 'form-control','readonly']) !!}
-                {{--<input type="text" class="form-control" name="login" value="{{ old('login') }}" placeholder="Login" id="login" readonly>--}}
+            <div class="form-group has-feedback">
+                {!! Form::email('email', '', ['class' => 'form-control', 'placeholder'=>'Addresse email', 'required']) !!}
+                <!-- <input type="email" class="form-control" name="email" value="" placeholder="Adresse email" id="email" readonly> -->
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                @if ($errors->has('login'))
-                    <span class="help-block">
-                    <strong>{{ $errors->first('login') }}</strong>
-                </span>
-                @endif
             </div>
 
-            <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
+            <div class="form-group has-feedback">
                 <input type="password" class="form-control" placeholder="Password" name="password" id="password" required>
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                @if ($errors->has('password'))
-                    <span class="help-block">
-                    <strong>{{ $errors->first('password') }}</strong>
-                </span>
-                @endif
 
             </div>
 
-            <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
+            <div class="form-group has-feedback">
                 <button type="submit" class="btn btn-primary btn-block btn-flat">{!! Lang::get('messages.login') !!}</button>
 
             </div>
-            <!--div class="row">
-                <div class="col-xs-8">
-                    <div class="checkbox icheck">
-                        <label>
-                            <input type="checkbox" name="remember"> Remember Me
-                        </label >
-                    </div>
-                </div>
-
-                <div class="form-group ">
-                </div>
-
-            </div-->
         </form>
-
-        <!-- a href="{{ url('/password/reset') }}">I forgot my password</a><br>
-        <a href="{{ url('/register') }}" class="text-center">Register a new membership</a -->
 
     </div>
     <!-- /.login-box-body -->

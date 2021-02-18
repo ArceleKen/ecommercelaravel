@@ -24,7 +24,7 @@ use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 class UserModel extends Model
 {
-    use SoftDeletes;
+    //use SoftDeletes;
     use HasRoles;
 
     public $table = 'users';
@@ -42,6 +42,7 @@ class UserModel extends Model
         'email',
         'password',
         'type',
+        'status',
         'debut',
         'fin'
     ];
@@ -54,6 +55,7 @@ class UserModel extends Model
         'type' => 'string',
         'debut' => 'string',
         'fin' => 'string',
+        'status' => 'integer',
     ];
 
     /**

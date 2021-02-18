@@ -22,7 +22,7 @@
                 <!-- User Account: style can be found in dropdown.less -->
 
                 <li class="dropdown user user-menu">
-                    @if (Session::has('username'))
+                    @if (Session::has('email'))
 
                        <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-circle text-success"></i>{{ Session::get('username')}}</a>

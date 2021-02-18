@@ -36,7 +36,7 @@ class UserController extends AppBaseController
         $user = \auth()->user();
         if ($user->hasRole('super_admin') || $user->hasPermissionTo("lister_user")) {
             $this->userRepository->pushCriteria(new RequestCriteria($request));
-            $userModels = $this->userRepository->all();
+            $userModels = $this->userRepository->findWhere(array("type" => "admin"));
 
             return view('users.index')
                 ->with('userModels', $userModels);
@@ -85,7 +85,7 @@ class UserController extends AppBaseController
 
 
             // on save le user
-            $exist = $this->userRepository->findWhere(array("login" => $request->login));
+            $exist = $this->userRepository->findWhere(array("email" => $request->email));
             if (count($exist) == 0) {
                 $user = $this->userRepository->create($input);
                 // on save ses roles

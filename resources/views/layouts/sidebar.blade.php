@@ -9,8 +9,8 @@
             </div>
             <div class="pull-left info">
                 <p>
-                    @if (Session::has('username'))
-                    {{ Session::get('username')}}
+                    @if (Session::has('email'))
+                    {{ Session::get('email')}}
                     @endif
                 </p>
                 <p><i class="fa fa-circle text-success"></i> Online</p>
@@ -65,7 +65,11 @@
                 </ul>
             </li>
             @endif
-
+            <li class="">
+                <a href="{!! url('/commandslist') !!}">
+                    <i class="fa fa-file-text"></i> <span>Les commmandes</span>
+                </a>
+            </li>
             
             @endif
 
