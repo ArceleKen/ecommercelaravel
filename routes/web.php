@@ -49,8 +49,16 @@ Route::group(['middleware' => ['auth', 'checkcreneau']], function () {
     Route::any('logs', 'LogController@index');
 
 
-    Route::any('commandslist', 'CommandController@commandslist');
+    Route::get('commandslist', 'CommandController@commandslist'); 
     Route::post('changedstatuscommand', 'CommandController@changedstatuscommand');
+
+    Route::get('categorieslist', 'CategorieController@index'); 
+    Route::post('createcategorie', 'CategorieController@createcategorie');
+    Route::post('updatecategorie', 'CategorieController@updatecategorie');
+    Route::get('productslist', 'ProductController@productslist'); 
+    Route::post('createproduct', 'ProductController@createproduct');
+    Route::post('updateproduct', 'ProductController@updateproduct');
+
 
 });
 

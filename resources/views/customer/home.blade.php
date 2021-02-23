@@ -146,7 +146,7 @@
                                     <div class="product-btns">
                                         <form method="POST" action="{{ route('cart.add', $elt) }}">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                                            <input type="hidden" name="quantity" value="1">
+                                            <input type="number" name="quantity" value="1" min="1"><br>
                                             <button class="primary-btn add-to-cart" type="submit"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
                                         </form>
                                     </div>

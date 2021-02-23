@@ -69,7 +69,18 @@
                 <a href="{!! url('/commandslist') !!}">
                     <i class="fa fa-file-text"></i> <span>Les commmandes</span>
                 </a>
-            </li>
+            </li> 
+            <li class="">
+                <a href="{!! url('/categorieslist') !!}">
+                    <i class="fa fa-file-text"></i> <span>Les categories</span>
+                </a>
+            </li> 
+            <li class="">
+                <a href="{!! url('/productslist') !!}">
+                    <i class="fa fa-file-text"></i> <span>Les produits</span>
+                </a>
+            </li> 
+
             
             @endif
 

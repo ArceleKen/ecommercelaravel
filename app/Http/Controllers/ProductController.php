@@ -75,6 +75,90 @@ class ProductController extends AppBaseController
                     ->with('product', $product)
                     ->with('products', $products);
     }
+
+
+
+
+    /// ADMIN
+
+    # Affichage du panier
+    public function productslist () {
+        $categorieslist = $this->categorieRepository->all();
+        $productslist = $this->productRepository->all();
+
+        return view("products.index")->with('categorieslist', $categorieslist)
+                                    ->with('productslist', $productslist); 
+    }
+
+    # Ajout d'un produit au panier
+    public function createproduct (Request $request) {
+        $this->validate($request, [
+            'main_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+
+        $image = $request->file('main_image');
+        $main_image = 'main-'.'prod_'.$this->my_random_string(5).time().'.'.$image->getClientOriginalExtension();
+        $destinationPath = base_path('customer/img');
+        //var_dump($main_image);
+        $image->move($destinationPath, $main_image);
+
+
+        $info = "";
+
+        $input = $request->all();
+
+        try{
+            $data = [
+                    "name" => $request->name,
+                    "description" => $request->description,
+                    "price" => $request->price,
+                    "status" => $request->status,
+                    "categorie_id" => $request->categorie_id,
+                ];
+
+
+            $data['main_image'] = $main_image;
+            $product = $this->productRepository->create($data);
+        }catch(\Exception $e){
+
+        }finally{
+            return redirect('/productslist');
+        }
+    }
+
+
+    public function updateproduct(Request $request)
+    {   
+
+        $this->validate($request, [
+            'main_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $image = $request->file('main_image');
+        
+        try{
+            $product = $this->productRepository->findWhere(array("id" => $request->idProduct))->first();
+            $product->name = $request->name;
+            $product->description = $request->description;
+            $product->price = $request->price;
+            $product->status = $request->status;
+            $product->categorie_id = $request->categorie_id;
+
+            if(!is_null($image)){
+                $main_image = 'main-'.'prod_'.$this->my_random_string(5).time().'.'.$image->getClientOriginalExtension();
+                $destinationPath = base_path('customer/img');
+                var_dump($main_image);
+                $image->move($destinationPath, $main_image);
+                $product->main_image = $main_image;
+            }
+            $product->save();
+        }catch(\Exception $e){
+
+        }finally{
+            return redirect('/productslist');
+        }
+    }
     
 
 }

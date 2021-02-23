@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function home()
     {
-        $categories = $this->categorieRepository->all();
+        $categories = $this->categorieRepository->findWhere(array("status" => 1));
 
         
 

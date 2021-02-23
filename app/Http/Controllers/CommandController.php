@@ -90,7 +90,7 @@ class CommandController extends AppBaseController
                             'sujet' => 'Commande de produits...', 
                             'cart' => $cart);
             $title = 'Commande de produits';
-            $destEmail = Email::$adresseMailDestinataire;
+            $destEmail = $request->email;
             $user_name = "";
             $email = new Email();
             $statut=$email->sendMailCommand($title, $data, $destEmail, $user_name);// envoie du mail
